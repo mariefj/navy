@@ -48,19 +48,7 @@ int receive_pid()
 	return (pid);
 }
 
-void player1_connection(char *pid_player)
-{
-	char *pid_binary = NULL;
-	int pid_p = my_getnbr(pid_player);
-
-	printf("my_pid: %i\n", getpid());
-	signal(SIGUSR1, handler);
-	pid_binary = convert_str_to_binary(my_itoa(getpid(), &pid_binary));
-	send_pid(pid_p, pid_binary);
-	printf("successfully connected\n");
-}
-
-void player2_connection()
+void player1_connection()
 {
 	int pid = 0;
 
@@ -71,4 +59,15 @@ void player2_connection()
 	pid = receive_pid();
 	receive_signals(pid);
 	printf("enemy connected\n");
+}
+
+void player2_connection(char *pid_player)
+{
+	char *pid_binary = NULL;
+	int pid_p = my_getnbr(pid_player);
+
+	printf("my_pid: %i\n", getpid());
+	signal(SIGUSR1, handler);
+	pid_binary = convert_str_to_binary(my_itoa(getpid(), &pid_binary));
+	send_pid(pid_p, pid_binary);
 }

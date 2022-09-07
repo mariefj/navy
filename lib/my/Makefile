@@ -49,7 +49,12 @@ SRCS	=	my_compute_power_rec.c		\
 		convert_char_to_binary.c	\
 		convert_str_to_binary.c		\
 		convert_binary_to_char.c	\
-		convert_binary_to_str.c
+		convert_binary_to_str.c		\
+		get_next_line.c			\
+		my_memcpy.c			\
+		my_memmove.c			\
+		my_append_c_no_free.c		\
+		my_append_str.c
 
 
 OBJS	=	$(SRCS:.c=.o)

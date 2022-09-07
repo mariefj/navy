@@ -40,12 +40,10 @@ void receive_signals(unsigned int pid)
 		kill(pid, SIGUSR1);
 		if (i % 8 == 0)
 		{
-			printf("HERE 1\n");
 			str = convert_binary_to_str(str_global);
-			printf("STR = %s\n", str);
 			if (str[(i / 8) - 1] == '\0')
 			{
-				printf("HERE 2\n");
+				usleep(1000);
 				my_putstr(str);
 				my_putchar('\n');
 				str_global[0] = '\0';

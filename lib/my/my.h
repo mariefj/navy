@@ -1,6 +1,13 @@
 #ifndef _MY_H_
 #define _MY_H_
 
+#include <stddef.h>
+
+#ifndef READ_SIZE
+#define READ_SIZE 10
+
+#endif
+
 int	my_putchar(char c);
 int	my_abs(int nb);
 int	my_pow(int nb, int p);
@@ -51,5 +58,11 @@ char	convert_binary_to_char(char *b);
 char	*convert_binary_to_str(char *str);
 char	*convert_char_to_binary(unsigned char c);
 char	*convert_str_to_binary(char *str);
+void    *my_memcpy(void *dest, const void *src, size_t n);
+void    *my_memmove(void *dest, const void *src, size_t n);
+char	*get_next_line(const int fd);
+char	*my_append_c_no_free(char *str, char c);
+char	*my_append_str(char const *str1, char const *str2);
+
 
 #endif
